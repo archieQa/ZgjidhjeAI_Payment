@@ -3,7 +3,7 @@ const { processPayment } = require("./cardProcessingService");
 
 // Process monthly recurring payments for users
 
-const processRecurringPayments = async () => {
+const processRecurringPayment = async () => {
   try {
     // Get all users on monthly plans
     const result = await query(
@@ -41,5 +41,5 @@ const processRecurringPayments = async () => {
 };
 
 module.exports = {
-  processRecurringPayments,
+  processRecurringPayment,
 };

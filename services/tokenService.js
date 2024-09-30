@@ -7,7 +7,8 @@ const resetTokens = async () => {
   try {
     // Get all users who need tokens reset
     const result = await query(
-      "SELECT id, plan, token, next_token_reset FFROM users WHERE plan != $1 AND next_token_reset < NOW()', ['premium']"
+      "SELECT id, plan, token, next_token_reset FROM users WHERE plan != $1 AND next_token_reset < NOW()",
+      ["premium"]
     );
 
     // For each user, reset tokens if applicable

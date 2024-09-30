@@ -21,7 +21,7 @@ cron.schedule("0 0 1 * *", () => {
 });
 
 // Routes
-
+const tokenRoutes = require("./routes/tokenRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 // middleware
@@ -31,6 +31,7 @@ app.use(express.json());
 // User Routes
 app.use("/api/payments", paymentRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/tokens", tokenRoutes);
 
 // Listen on port
 
